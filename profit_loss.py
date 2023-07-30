@@ -3,7 +3,6 @@ import csv
 
 #Create a function that reads the date in CSV file
 def readcsv ():
-    arr = []
 
     curr_day = 0 
     curr_amt = 0
@@ -36,7 +35,7 @@ def readcsv ():
 
                 if curr_amt >= prev_amt :
                     highest_profit = curr_amt
-            linecount = linecount + 1   
+            linecount = linecount + 1
         print(highest_profit)        
         
 readcsv()
