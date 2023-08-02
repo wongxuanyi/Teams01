@@ -35,6 +35,7 @@ def readcsv ():
 #Checking if amount is increasing, then take the highest
                 if curr_amt >= prev_amt :
                     highest_profit = curr_amt
+#Go through all the line                     
             linecount = linecount + 1
         print(highest_profit)        
         
