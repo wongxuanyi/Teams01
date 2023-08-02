@@ -24,15 +24,15 @@ def readcsv ():
                 curr_amt = row [4]
 
 #if there is more than one line 
-#Checking for difference 
+ 
             if linecount > 1:
                 prev_amt = curr_amt
 
                 curr_amt = row[4]
-
+#Checking for difference
                 if curr_amt < prev_amt:
                     difference = prev_amt - curr_amt
-
+#Checking if amount is increasing, then take the highest
                 if curr_amt >= prev_amt :
                     highest_profit = curr_amt
             linecount = linecount + 1
