@@ -1,52 +1,42 @@
-# Import csv module, pathlib
-from pathlib import Path
+from pathlib import Path 
 import csv
-file_path = Path.cwd()/"COH_Sample_Data_Files"/"Cash on Hand (Deficit).csv"
 
-# Check if file exists
-print(file_path.exists())
-print(file_path.is_file())
+#Create a function that reads the date in CSV file
+def readcsv ():
 
-# Read csv file
-with file_path.open(mode = "r", encoding= "UTF-8", newline = "") as file:
-    reader = csv.reader(file)
+    curr_day = 0 
+    curr_amt = 0
 
-def difference(data):
-    """
-    This function calculates the difference in Cash-On-Hand if the current day is lower than the previous day.
-    """
-    cash_difference = []
-    prev_cash = data[0]["cash_on_hand"]
+    prev_day = 0
+    prev_amt = 0
 
-    for entry in data[1]:
-        current_cash = entry["cash_on_hand"]
-        if current_cash < prev_cash:
-            cash_difference.append(current_cash - prev_cash)
-        prev_cash = current_cash
+#Open CSV file 
+    with open('Profit & Loss (Surplus).csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter = ',')
+        linecount = 0
+        highest_profit = 0
+#Loop through content 
+        for row in csv_reader:
+#If there is only one line in file, use that line
+            
+            if linecount == 1:
+                curr_day = row[0]
+                curr_amt = row [4]
 
-    return cash_difference
+#if there is more than one line 
+ 
+            if linecount > 1:
+                prev_amt = curr_amt
 
-def main():
-    file_name = "Cash on Hand (Deficit).csv"
-    file_path = Path.cwd()/"COH_Sample_Data_Files"/"Cash on Hand (Deficit).csv"
-
-    if file_path.exists() == False: 
-        return print(f"Error {file_name} does not exist.")
-    
-    elif file_path.is_file() == False:
-        return print(f"Error {file_name} is not an actual file.")
-    
-
-    with file_path.open(mode = "r", encoding= "UTF-8", newline = "") as file:
-        reader = csv.reader(file)
-        data = list(reader)
-    
-    cash_difference_data = difference(data)
-
-    print("Day \tCash Difference")
-    print("----------------------")
-    for item in cash_difference_data:
-        print(f"{item['Day']} \t{item['CashDifference']:.2f}")
-
-if __name__ == "__main__":
-    main()
+                curr_amt = row[4]
+#Checking for difference
+                if curr_amt < prev_amt:
+                    difference = prev_amt - curr_amt
+#Checking if amount is increasing, then take the highest
+                if curr_amt >= prev_amt :
+                    highest_profit = curr_amt
+#Go through all the line                     
+            linecount = linecount + 1
+        print(highest_profit)        
+        
+readcsv()
