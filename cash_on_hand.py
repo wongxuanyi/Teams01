@@ -11,7 +11,7 @@ def readcsv ():
     prev_amt = 0
 
 #Open CSV file 
-    with open('COH_MAB_data_files.csv') as csv_file:
+    with open('Cash_on_hand.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter = ',')
         linecount = 0
         highest_profit = 0
