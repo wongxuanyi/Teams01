@@ -11,7 +11,7 @@ def readcsv ():
     prev_amt = 0
 
 #Open CSV file 
-    with open('Teams01/P&L_MAB_data_files.csv') as csv_file:
+    with open('P&L_MAB_data_files.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter = ',')
         linecount = 0
         highest_profit = 0
@@ -30,12 +30,11 @@ def readcsv ():
 
                 curr_amt = int(row[4])
                 
-            
-#Checking for difference
+         #Checking for difference
                 if curr_amt < prev_amt:
-                  difference = prev_amt - (curr_amt)
-                 
-#Checking if amount is increasing, then take the highest
+                  difference = prev_amt - curr_amt
+                  
+                #Checking if amount is increasing, then take the highest
                 if curr_amt >= prev_amt :
                    highest_profit = curr_amt
 #Go through all the line                     
