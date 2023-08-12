@@ -5,6 +5,7 @@ from pathlib import path
 def find_highest_overhead_category(file_path):
     highest = Decimal(0)
     highestCategory = ""
+    
 
     print("Find highest overheads...")
     
@@ -24,7 +25,7 @@ def find_highest_overhead_category(file_path):
     return highestCategory, highest
 
 # Example usage
-file_path = Path('csv_reports/overhead.csv')  # Replace with your file path
+file_path = Path('overheads.csv')  # Replace with your file path
 file_path.touch()  # Create an empty file if it doesn't exist
 highest_category, highest_overhead = find_highest_overhead_category(file_path)
 print("The category with the highest overhead is:", highest_category)

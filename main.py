@@ -15,13 +15,12 @@ def main():
             f.write('[CASH DEFICIT] day: ')
             f.write(y[0])
             f.write(',')
-main()
 
             f.write('AMOUNT: USD')
             f.write(str(y[1]))
             f.write('/n')
 
-        for x in profit_loss_data:
+        for x in Profit_loss_data:
 
             f.write('[PROFIT INCREMENT] day: ')
             f.write(x[0])
