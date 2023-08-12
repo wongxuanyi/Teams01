@@ -29,6 +29,8 @@ def main():
             f.write('/n')
 
     print('summary report done')
+
+main()
         
 
     
