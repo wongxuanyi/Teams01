@@ -17,7 +17,7 @@ def find_highest_overhead_category():
 
         for row in csv_reader:
             remove = row[3].replace('$','').replace(',','')
-            converted_amount = Decimal(strip)
+            converted_amount = Decimal(remove)
             rounded_amount = round(converted_amount,2)
             
             
