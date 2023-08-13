@@ -22,7 +22,7 @@ def main():
 
         for x in Profit_loss_data:
 
-            f.write('[PROFIT INCREMENT] day: ')
+            f.write('[NET SURPLUS] day: ')
             f.write(x[0])
             f.write(',')
 
