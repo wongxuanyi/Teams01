@@ -30,9 +30,17 @@ def main():
             f.write(str(x[1]))
             f.write('/n')
 
+        for z in overhead_data:
+            
+            f.write('[HIGHEST OVERHEADS]')
+            f.write(overhead_data[0])
+            f.write(': USD')
+            f.write(str(overhead_data[1]))
+            f.write('/n')
+
     print('summary report done')
 
-main()
+
 
 
 
