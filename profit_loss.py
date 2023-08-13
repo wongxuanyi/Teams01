@@ -29,7 +29,9 @@ def readcsv ():
             if linecount > 1:
                 prev_amt = int(curr_amt)
 
+                curr_day = row[0]
                 curr_amt = int(row[4])
+                
                 
          #Checking for difference
                 if curr_amt < prev_amt:
