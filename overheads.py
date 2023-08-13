@@ -2,7 +2,8 @@ import csv
 from pathlib import Path 
 from decimal import Decimal
 
-def find_highest_overhead_category(file_path):
+def find_highest_overhead_category():
+    arr = []
     highest = Decimal(0)
     highestCategory = ""
     
@@ -10,7 +11,7 @@ def find_highest_overhead_category(file_path):
     print("Find highest overheads...")
     
     # Read the CSV file
-    with open(file_path, 'r') as csv_file:
+    with open('overheads.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         next(csv_reader)  # Skip the header
 
@@ -27,7 +28,5 @@ def find_highest_overhead_category(file_path):
     return highestCategory, highest
 
 
-file_path = Path('overheads.csv')  # Replace with your file path
-highest_category, highest_overhead = find_highest_overhead_category(file_path)
-print("The category with the highest overhead is:", highest_category)
-print("The highest overhead value is:", highest_overhead)
+
+

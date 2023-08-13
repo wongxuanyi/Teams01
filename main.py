@@ -7,7 +7,7 @@ def main():
     """
     cash_on_hand_data= cash_on_hand.readcsv()
     Profit_loss_data = profit_loss.readcsv()
-    overhead_data = overheads.readcsv()
+    overhead_data = overheads.find_highest_overhead_category()
 
     with open('summary_report.txt', 'w') as f:
         #loop through the data
@@ -18,8 +18,8 @@ def main():
 
             f.write('AMOUNT: USD')
             f.write(str(y[1]))
-            f.write('/n')
-
+            f.write('\n')
+        #Loops through data
         for x in Profit_loss_data:
 
             f.write('[NET SURPLUS] day: ')
@@ -28,7 +28,7 @@ def main():
 
             f.write('AMOUNT: USD')
             f.write(str(x[1]))
-            f.write('/n')
+            f.write('\n')
 
         for z in overhead_data:
             
@@ -36,9 +36,11 @@ def main():
             f.write(overhead_data[0])
             f.write(': USD')
             f.write(str(overhead_data[1]))
-            f.write('/n')
+            f.write('\n')
 
     print('summary report done')
+
+main()
 
 
 

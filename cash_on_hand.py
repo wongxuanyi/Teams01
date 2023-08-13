@@ -3,6 +3,7 @@ import csv
 
 #Create a function that reads the date in CSV file
 def readcsv ():
+    arr = []
 
     curr_day = 0 
     curr_amt = 0
@@ -32,11 +33,11 @@ def readcsv ():
 #Checking for difference
                 if curr_amt < prev_amt:
                     difference = prev_amt - curr_amt
-#Checking if amount is increasing, then take the highest
-                if curr_amt >= prev_amt :
-                    highest_profit = curr_amt
+                    entry = [curr_day, float(difference)]
+                    arr.append(entry)
+
 #Go through all the line                     
             linecount = linecount + 1
         print(highest_profit)        
         
-readcsv()
+    return arr
