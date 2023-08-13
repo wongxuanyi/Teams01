@@ -7,8 +7,6 @@ def find_highest_overhead_category():
     highest = Decimal(0)
     highestCategory = ""
     
-
-    print("Find highest overheads...")
     
     # Read the CSV file
     with open('overheads.csv', 'r') as csv_file:
@@ -16,8 +14,8 @@ def find_highest_overhead_category():
         next(csv_reader)  # Skip the header
 
         for row in csv_reader:
-            remove = row[3].replace('$','').replace(',','')
-            converted_amount = Decimal(remove)
+            strip = row[3].replace('$','').replace(',','')
+            converted_amount = Decimal(strip)
             rounded_amount = round(converted_amount,2)
             
             
