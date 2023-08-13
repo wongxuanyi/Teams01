@@ -41,7 +41,8 @@ def main():
     print('summary report done')
 
 
-
+if __name__ =="__main__":
+    main()
 
 
 
