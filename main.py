@@ -3,7 +3,7 @@ import cash_on_hand, profit_loss, overheads
 def main():
 
     """
-    this function processes cash on hand, profit and loss and overheads and generates a summery report
+    This function processes cash on hand, profit and loss and overheads and generates a summery report
     """
     cash_on_hand_data= cash_on_hand.readcsv()
     Profit_loss_data = profit_loss.readcsv()
@@ -11,6 +11,8 @@ def main():
 
     with open('summary_report.txt', 'w') as f:
         #loop through the data
+
+        
         for y in cash_on_hand_data:
             f.write('[CASH DEFICIT] day: ')
             f.write(y[0])
@@ -22,7 +24,7 @@ def main():
         #Loops through data
         for x in Profit_loss_data:
 
-            f.write('[NET SURPLUS] day: ')
+            f.write('[PROFIT DEFICIT] day: ')
             f.write(x[0])
             f.write(',')
 
