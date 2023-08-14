@@ -36,14 +36,16 @@ def main():
             
             f.write('[HIGHEST OVERHEADS]')
             f.write(overhead_data[0])
-            f.write(': USD')
+            f.write(': ')
             f.write(str(overhead_data[1]))
+            f.write(' %')
             f.write('\n')
+
 
     print('summary report done')
 
 main()
-#test
+
 
 
 
