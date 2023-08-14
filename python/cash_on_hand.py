@@ -12,7 +12,7 @@ def readcsv ():
     prev_amt = 0
 
 #Open CSV file 
-    with open('profit_and_loss.csv') as csv_file:
+    with open('csv/Cash_on_hand.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter = ',')
         linecount = 0
         highest_profit = 0
@@ -22,27 +22,22 @@ def readcsv ():
             
             if linecount == 1:
                 curr_day = row[0]
-                curr_amt = row[4]
+                curr_amt = int(row [1])
 
 #if there is more than one line 
  
             if linecount > 1:
-                prev_amt = int(curr_amt)
+                prev_amt = curr_amt
 
-                curr_amt = int(row[4])
-                
-         #Checking for difference
+                curr_amt = int(row[1])
+#Checking for difference
                 if curr_amt < prev_amt:
-                  difference = prev_amt - curr_amt
-                  entry = [curr_day, float(difference)]
-                  arr.append(entry)
-        
+                    difference = prev_amt - curr_amt
+                    entry = [curr_day, float(difference)]
+                    arr.append(entry)
+
 #Go through all the line                     
             linecount = linecount + 1
-        print(highest_profit)       
-
-    return arr 
+        print(highest_profit)        
         
-
-   
-    
+    return arr
