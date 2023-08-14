@@ -1,10 +1,11 @@
 import csv 
 from pathlib import Path 
+from decimal import Decimal 
 
 
 def find_highest_overhead_category():
     arr = []
-    highest = 0
+    highest = Decimal(0)
     highestCategory = ""
     
 
@@ -16,11 +17,11 @@ def find_highest_overhead_category():
         next(csv_reader)  # Skip the header
 
         for row in csv_reader:
-            amount = row[1]
+            percentage = Decimal(row[1])
             
             
-            if amount > highest:
-                highest = 
+            if percentage > highest:
+                highest = percentage
                 highestCategory = row[0]
 
     return highestCategory, highest
